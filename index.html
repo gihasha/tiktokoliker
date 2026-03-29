@@ -1,1 +1,566 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>TikTok Video Free Liker | Dasun Kalhara</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: system-ui, 'Segoe UI', 'Poppins', 'Inter', -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+    }
 
+    body {
+      min-height: 100vh;
+      background: linear-gradient(145deg, #0f0c1f 0%, #1a1730 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1.5rem;
+    }
+
+    .glass-card {
+      max-width: 600px;
+      width: 100%;
+      background: rgba(20, 18, 35, 0.75);
+      backdrop-filter: blur(16px);
+      border-radius: 3rem;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 25px 45px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.05);
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .content {
+      padding: 2rem 1.8rem 1.8rem;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      margin-bottom: 1.5rem;
+      justify-content: center;
+    }
+
+    .tiktok-icon {
+      background: linear-gradient(135deg, #25F4EE, #FE2C55);
+      width: 44px;
+      height: 44px;
+      border-radius: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.3);
+    }
+
+    .tiktok-icon svg {
+      width: 28px;
+      height: 28px;
+      filter: drop-shadow(0 2px 2px rgba(0,0,0,0.2));
+    }
+
+    h1 {
+      font-size: 1.9rem;
+      font-weight: 700;
+      background: linear-gradient(120deg, #ffffff, #ffcd6b);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      letter-spacing: -0.3px;
+    }
+
+    .sub {
+      text-align: center;
+      color: #b9b3e6;
+      margin-bottom: 2rem;
+      font-weight: 500;
+      font-size: 0.95rem;
+      border-bottom: 1px dashed rgba(255,255,240,0.2);
+      display: inline-block;
+      width: auto;
+      margin-left: auto;
+      margin-right: auto;
+      padding-bottom: 0.5rem;
+    }
+
+    .input-group {
+      background: rgba(0,0,0,0.45);
+      border-radius: 2rem;
+      padding: 0.2rem 0.2rem 0.2rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border: 1px solid rgba(255,255,255,0.15);
+      transition: 0.2s;
+      margin-bottom: 1.8rem;
+      flex-wrap: wrap;
+    }
+
+    .input-group:focus-within {
+      border-color: #fe2c55;
+      box-shadow: 0 0 0 2px rgba(254,44,85,0.3);
+    }
+
+    .input-group input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      padding: 1rem 0;
+      color: white;
+      font-size: 1rem;
+      outline: none;
+      min-width: 180px;
+    }
+
+    .input-group input::placeholder {
+      color: #a29fbf;
+      font-weight: 400;
+    }
+
+    .action-row {
+      background: rgba(10, 8, 22, 0.7);
+      border-radius: 2rem;
+      padding: 0.6rem 1rem;
+      margin-bottom: 1.8rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .select-label {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255,255,255,0.05);
+      padding: 0.4rem 1rem;
+      border-radius: 2rem;
+      color: #ddd9ff;
+      font-weight: 500;
+    }
+
+    select {
+      background: #0e0b1e;
+      border: 1px solid #fe2c5566;
+      padding: 0.5rem 1.2rem;
+      border-radius: 2rem;
+      color: white;
+      font-weight: 500;
+      outline: none;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+
+    .send-btn {
+      width: 100%;
+      background: linear-gradient(95deg, #fe2c55, #ff6f4a);
+      border: none;
+      padding: 1rem;
+      border-radius: 3rem;
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      cursor: pointer;
+      transition: all 0.25s;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 8px 20px rgba(254,44,85,0.4);
+    }
+
+    .send-btn:active {
+      transform: scale(0.97);
+      background: linear-gradient(95deg, #d41e44, #e55330);
+    }
+
+    .result-panel {
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 1.5rem;
+      padding: 1rem 1.2rem;
+      margin-bottom: 1.5rem;
+      backdrop-filter: blur(4px);
+      text-align: center;
+      border-left: 4px solid #25F4EE;
+      transition: 0.2s;
+    }
+
+    .result-message {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #cafff0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .result-message span {
+      color: #ffdf8c;
+      font-weight: bold;
+    }
+
+    .like-count-animation {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #fe2c55;
+    }
+
+    .footer {
+      background: rgba(0,0,0,0.45);
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.85rem;
+      color: #bcb7e6;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      letter-spacing: 0.5px;
+    }
+
+    .footer strong {
+      color: #ffcf6e;
+      font-weight: 600;
+    }
+
+    .info-tip {
+      font-size: 0.7rem;
+      text-align: center;
+      margin-top: 0.8rem;
+      color: #8a84b5;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    /* App Icon Generator Section Styles */
+    .icon-section {
+      background: #0a0816;
+      border-radius: 2rem;
+      padding: 1.5rem;
+      margin-top: 1rem;
+      text-align: center;
+    }
+
+    .icon-section h3 {
+      color: white;
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+
+    #appIconCanvas {
+      border-radius: 56px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      margin-bottom: 1rem;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .download-icon-btn {
+      background: #25F4EE;
+      border: none;
+      padding: 0.6rem 1.5rem;
+      border-radius: 2rem;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 0.5rem;
+      color: #0a0816;
+      transition: 0.2s;
+    }
+
+    .download-icon-btn:hover {
+      background: #fe2c55;
+      color: white;
+    }
+
+    .icon-note {
+      color: #8a84b5;
+      font-size: 0.7rem;
+      margin-top: 0.8rem;
+    }
+
+    @media (max-width: 480px) {
+      .content {
+        padding: 1.5rem;
+      }
+      h1 {
+        font-size: 1.5rem;
+      }
+      #appIconCanvas {
+        width: 180px;
+        height: 180px;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="glass-card">
+  <div class="content">
+    <div class="logo-area">
+      <div class="tiktok-icon">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 1.18.24V9.27a6.3 6.3 0 0 0-1.19-.1A6.3 6.3 0 0 0 5.06 15.3a6.29 6.29 0 0 0 10.18 4.63 6.29 6.29 0 0 0 2.19-4.7V9.21a7.76 7.76 0 0 0 4.22 1.28V7.25a4.84 4.84 0 0 1-2.06-.56z" fill="white"/>
+        </svg>
+      </div>
+      <h1>TikTok Free Liker</h1>
+    </div>
+    <div style="text-align: center;">
+      <div class="sub">✦ Boost engagement instantly ✦</div>
+    </div>
+
+    <div class="input-group">
+      <input type="url" id="videoLink" placeholder="https://www.tiktok.com/@user/video/123456789" autocomplete="off">
+    </div>
+
+    <div class="action-row">
+      <div class="select-label">📊 What to increase?</div>
+      <select id="boostType">
+        <option value="likes">❤️ Likes</option>
+        <option value="views">👁️ Views</option>
+      </select>
+    </div>
+
+    <button class="send-btn" id="sendBoostBtn">
+      <span>🚀</span> Send Boost
+    </button>
+
+    <div class="result-panel" id="resultPanel" style="display: none;">
+      <div class="result-message" id="resultMessage"></div>
+    </div>
+    <div class="info-tip">
+      <span>🔗 paste any TikTok video link</span>
+      <span>⚡ free & unlimited (demo)</span>
+    </div>
+
+    <!-- App Icon Generator Section -->
+    <div class="icon-section">
+      <h3>📱 App Icon Preview (Download for your device)</h3>
+      <canvas id="appIconCanvas" width="256" height="256"></canvas>
+      <div>
+        <button class="download-icon-btn" id="downloadIconBtn">📥 Download PNG Icon</button>
+      </div>
+      <div class="icon-note">✨ Click download to save as PNG for app icon / website favicon ✨</div>
+    </div>
+  </div>
+  <div class="footer">
+    Created By <strong>Dasun Kalhara</strong> ✨
+  </div>
+</div>
+
+<script>
+  (function(){
+    // ------------------- MAIN APP LOGIC -------------------
+    const videoLinkInput = document.getElementById('videoLink');
+    const boostTypeSelect = document.getElementById('boostType');
+    const sendBtn = document.getElementById('sendBoostBtn');
+    const resultPanel = document.getElementById('resultPanel');
+    const resultMessageDiv = document.getElementById('resultMessage');
+
+    function simulateBoost(videoUrl, boostType) {
+      return new Promise((resolve) => {
+        let isValid = false;
+        if(videoUrl && videoUrl.trim() !== "") {
+          const urlPattern = /(tiktok\.com\/@[\w.]+\/video\/\d+|tiktok\.com\/\@[\w.]+\/video\/\d+|vm\.tiktok\.com\/\w+)/i;
+          isValid = urlPattern.test(videoUrl);
+        }
+        
+        setTimeout(() => {
+          if(!isValid) {
+            resolve({ success: false, error: "Invalid TikTok link. Please check the URL." });
+            return;
+          }
+          let boostedAmount = 0;
+          if(boostType === 'likes') {
+            boostedAmount = Math.floor(Math.random() * (85 - 18 + 1) + 18);
+          } else {
+            boostedAmount = Math.floor(Math.random() * (210 - 45 + 1) + 45);
+          }
+          resolve({ success: true, amount: boostedAmount, type: boostType });
+        }, 800);
+      });
+    }
+
+    function showResult(success, type, amount = 0, errorMsg = "") {
+      resultPanel.style.display = "block";
+      if(success) {
+        const typeEmoji = type === 'likes' ? '❤️' : '👁️';
+        const typeWord = type === 'likes' ? 'Likes' : 'Views';
+        resultMessageDiv.innerHTML = `
+          <div style="display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; justify-content: center;">
+            <span style="font-size: 1.6rem;">✅</span>
+            <span>Successfully added <span class="like-count-animation">${amount}</span> ${typeWord} ${typeEmoji}</span>
+            <span>to your video!</span>
+          </div>
+          <div style="font-size: 0.75rem; margin-top: 6px; color: #b3e4ff;">✨ Engagement boosted ✨</div>
+        `;
+      } else {
+        resultMessageDiv.innerHTML = `
+          <div style="display: flex; align-items: center; gap: 0.5rem; justify-content: center;">
+            <span>⚠️</span>
+            <span>${errorMsg || "Something went wrong. Try again!"}</span>
+          </div>
+        `;
+      }
+      resultPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    async function handleSendBoost() {
+      let rawLink = videoLinkInput.value.trim();
+      if(rawLink === "") {
+        showResult(false, null, 0, "Please enter a TikTok video link first.");
+        return;
+      }
+      
+      const boostType = boostTypeSelect.value;
+      
+      const originalBtnText = sendBtn.innerHTML;
+      sendBtn.innerHTML = `<span>⏳</span> Processing...`;
+      sendBtn.disabled = true;
+      
+      const result = await simulateBoost(rawLink, boostType);
+      
+      sendBtn.innerHTML = originalBtnText;
+      sendBtn.disabled = false;
+      
+      if(result.success) {
+        showResult(true, result.type, result.amount, "");
+      } else {
+        showResult(false, null, 0, result.error);
+      }
+    }
+    
+    sendBtn.addEventListener('click', handleSendBoost);
+    
+    videoLinkInput.addEventListener('keypress', (e) => {
+      if(e.key === 'Enter') {
+        e.preventDefault();
+        handleSendBoost();
+      }
+    });
+
+    // ------------------- APP ICON DRAWING (CANVAS) -------------------
+    const canvas = document.getElementById('appIconCanvas');
+    const ctx = canvas.getContext('2d');
+    
+    // Helper: rounded rectangle
+    if (!CanvasRenderingContext2D.prototype.roundRect) {
+      CanvasRenderingContext2D.prototype.roundRect = function(x, y, w, h, r) {
+        if (w < 2 * r) r = w / 2;
+        if (h < 2 * r) r = h / 2;
+        this.moveTo(x+r, y);
+        this.lineTo(x+w-r, y);
+        this.quadraticCurveTo(x+w, y, x+w, y+r);
+        this.lineTo(x+w, y+h-r);
+        this.quadraticCurveTo(x+w, y+h, x+w-r, y+h);
+        this.lineTo(x+r, y+h);
+        this.quadraticCurveTo(x, y+h, x, y+h-r);
+        this.lineTo(x, y+r);
+        this.quadraticCurveTo(x, y, x+r, y);
+        return this;
+      };
+    }
+    
+    function drawAppIcon() {
+      const size = 256;
+      const radius = 56;
+      
+      ctx.clearRect(0, 0, size, size);
+      
+      // Background gradient
+      const grad = ctx.createLinearGradient(0, 0, size, size);
+      grad.addColorStop(0, '#1a1730');
+      grad.addColorStop(1, '#0f0c1f');
+      ctx.fillStyle = grad;
+      ctx.beginPath();
+      ctx.roundRect(0, 0, size, size, radius);
+      ctx.fill();
+      
+      // Border glow
+      ctx.strokeStyle = '#fe2c55';
+      ctx.lineWidth = 3;
+      ctx.beginPath();
+      ctx.roundRect(3, 3, size-6, size-6, radius-4);
+      ctx.stroke();
+      
+      const centerX = size/2;
+      const centerY = size/2;
+      
+      // Circle gradient (TikTok style)
+      const circleGrad = ctx.createLinearGradient(centerX-60, centerY-60, centerX+60, centerY+60);
+      circleGrad.addColorStop(0, '#25F4EE');
+      circleGrad.addColorStop(1, '#FE2C55');
+      ctx.beginPath();
+      ctx.arc(centerX, centerY, 88, 0, Math.PI * 2);
+      ctx.fillStyle = circleGrad;
+      ctx.fill();
+      
+      ctx.shadowColor = 'rgba(0,0,0,0.3)';
+      ctx.shadowBlur = 8;
+      
+      // Music note symbol
+      ctx.font = `bold 120px "Segoe UI", system-ui, "Poppins"`;
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+      ctx.fillStyle = 'white';
+      ctx.fillText("♬", centerX, centerY-8);
+      
+      // "Tik" text
+      ctx.font = `bold 52px "Segoe UI", system-ui`;
+      ctx.fillStyle = 'white';
+      ctx.fillText("Tik", centerX-10, centerY+52);
+      
+      // Sparkles
+      ctx.fillStyle = '#FFD966';
+      ctx.shadowBlur = 4;
+      
+      // Sparkle 1
+      ctx.beginPath();
+      ctx.moveTo(centerX-75, centerY-65);
+      ctx.lineTo(centerX-72, centerY-58);
+      ctx.lineTo(centerX-65, centerY-56);
+      ctx.lineTo(centerX-72, centerY-54);
+      ctx.lineTo(centerX-75, centerY-47);
+      ctx.lineTo(centerX-78, centerY-54);
+      ctx.lineTo(centerX-85, centerY-56);
+      ctx.lineTo(centerX-78, centerY-58);
+      ctx.fill();
+      
+      // Sparkle 2
+      ctx.beginPath();
+      ctx.moveTo(centerX+70, centerY+45);
+      ctx.lineTo(centerX+73, centerY+52);
+      ctx.lineTo(centerX+80, centerY+54);
+      ctx.lineTo(centerX+73, centerY+56);
+      ctx.lineTo(centerX+70, centerY+63);
+      ctx.lineTo(centerX+67, centerY+56);
+      ctx.lineTo(centerX+60, centerY+54);
+      ctx.lineTo(centerX+67, centerY+52);
+      ctx.fill();
+      
+      ctx.shadowBlur = 0;
+      
+      // "LIKER" text at bottom
+      ctx.font = `bold 22px "Segoe UI"`;
+      ctx.fillStyle = '#ffdf8c';
+      ctx.fillText("LIKER", centerX, centerY+92);
+    }
+    
+    drawAppIcon();
+    
+    // Download PNG button
+    document.getElementById('downloadIconBtn').addEventListener('click', function() {
+      const link = document.createElement('a');
+      link.download = 'tiktok-free-liker-icon.png';
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+    });
+  })();
+</script>
+</body>
+  </html>
