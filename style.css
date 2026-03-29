@@ -1,0 +1,241 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, 'Segoe UI', 'Poppins', 'Inter', -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(145deg, #0f0c1f 0%, #1a1730 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+}
+
+.glass-card {
+  max-width: 600px;
+  width: 100%;
+  background: rgba(20, 18, 35, 0.75);
+  backdrop-filter: blur(16px);
+  border-radius: 3rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.content {
+  padding: 2rem 1.8rem 1.8rem;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 1.5rem;
+  justify-content: center;
+}
+
+.tiktok-icon {
+  background: linear-gradient(135deg, #25F4EE, #FE2C55);
+  width: 44px;
+  height: 44px;
+  border-radius: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.3);
+}
+
+.tiktok-icon svg {
+  width: 28px;
+  height: 28px;
+  filter: drop-shadow(0 2px 2px rgba(0,0,0,0.2));
+}
+
+h1 {
+  font-size: 1.9rem;
+  font-weight: 700;
+  background: linear-gradient(120deg, #ffffff, #ffcd6b);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: -0.3px;
+}
+
+.sub {
+  text-align: center;
+  color: #b9b3e6;
+  margin-bottom: 2rem;
+  font-weight: 500;
+  font-size: 0.95rem;
+  border-bottom: 1px dashed rgba(255,255,240,0.2);
+  display: inline-block;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 0.5rem;
+}
+
+.input-group {
+  background: rgba(0,0,0,0.45);
+  border-radius: 2rem;
+  padding: 0.2rem 0.2rem 0.2rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid rgba(255,255,255,0.15);
+  transition: 0.2s;
+  margin-bottom: 1.8rem;
+  flex-wrap: wrap;
+}
+
+.input-group:focus-within {
+  border-color: #fe2c55;
+  box-shadow: 0 0 0 2px rgba(254,44,85,0.3);
+}
+
+.input-group input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  padding: 1rem 0;
+  color: white;
+  font-size: 1rem;
+  outline: none;
+  min-width: 180px;
+}
+
+.input-group input::placeholder {
+  color: #a29fbf;
+  font-weight: 400;
+}
+
+.action-row {
+  background: rgba(10, 8, 22, 0.7);
+  border-radius: 2rem;
+  padding: 0.6rem 1rem;
+  margin-bottom: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.select-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255,255,255,0.05);
+  padding: 0.4rem 1rem;
+  border-radius: 2rem;
+  color: #ddd9ff;
+  font-weight: 500;
+}
+
+select {
+  background: #0e0b1e;
+  border: 1px solid #fe2c5566;
+  padding: 0.5rem 1.2rem;
+  border-radius: 2rem;
+  color: white;
+  font-weight: 500;
+  outline: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.send-btn {
+  width: 100%;
+  background: linear-gradient(95deg, #fe2c55, #ff6f4a);
+  border: none;
+  padding: 1rem;
+  border-radius: 3rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  transition: all 0.25s;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 8px 20px rgba(254,44,85,0.4);
+}
+
+.send-btn:active {
+  transform: scale(0.97);
+  background: linear-gradient(95deg, #d41e44, #e55330);
+}
+
+.result-panel {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 1.5rem;
+  padding: 1rem 1.2rem;
+  margin-bottom: 1.5rem;
+  backdrop-filter: blur(4px);
+  text-align: center;
+  border-left: 4px solid #25F4EE;
+  transition: 0.2s;
+}
+
+.result-message {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #cafff0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.result-message span {
+  color: #ffdf8c;
+  font-weight: bold;
+}
+
+.like-count-animation {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fe2c55;
+}
+
+.footer {
+  background: rgba(0,0,0,0.45);
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.85rem;
+  color: #bcb7e6;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  letter-spacing: 0.5px;
+}
+
+.footer strong {
+  color: #ffcf6e;
+  font-weight: 600;
+}
+
+.info-tip {
+  font-size: 0.7rem;
+  text-align: center;
+  margin-top: 0.8rem;
+  color: #8a84b5;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 480px) {
+  .content {
+    padding: 1.5rem;
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+}
