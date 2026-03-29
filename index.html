@@ -238,63 +238,12 @@
       flex-wrap: wrap;
     }
 
-    /* App Icon Generator Section Styles */
-    .icon-section {
-      background: #0a0816;
-      border-radius: 2rem;
-      padding: 1.5rem;
-      margin-top: 1rem;
-      text-align: center;
-    }
-
-    .icon-section h3 {
-      color: white;
-      margin-bottom: 1rem;
-      font-size: 1.2rem;
-    }
-
-    #appIconCanvas {
-      border-radius: 56px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-      margin-bottom: 1rem;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .download-icon-btn {
-      background: #25F4EE;
-      border: none;
-      padding: 0.6rem 1.5rem;
-      border-radius: 2rem;
-      font-weight: bold;
-      cursor: pointer;
-      margin-top: 0.5rem;
-      color: #0a0816;
-      transition: 0.2s;
-    }
-
-    .download-icon-btn:hover {
-      background: #fe2c55;
-      color: white;
-    }
-
-    .icon-note {
-      color: #8a84b5;
-      font-size: 0.7rem;
-      margin-top: 0.8rem;
-    }
-
     @media (max-width: 480px) {
       .content {
         padding: 1.5rem;
       }
       h1 {
         font-size: 1.5rem;
-      }
-      #appIconCanvas {
-        width: 180px;
-        height: 180px;
       }
     }
   </style>
@@ -337,16 +286,6 @@
       <span>🔗 paste any TikTok video link</span>
       <span>⚡ free & unlimited (demo)</span>
     </div>
-
-    <!-- App Icon Generator Section -->
-    <div class="icon-section">
-      <h3>📱 App Icon Preview (Download for your device)</h3>
-      <canvas id="appIconCanvas" width="256" height="256"></canvas>
-      <div>
-        <button class="download-icon-btn" id="downloadIconBtn">📥 Download PNG Icon</button>
-      </div>
-      <div class="icon-note">✨ Click download to save as PNG for app icon / website favicon ✨</div>
-    </div>
   </div>
   <div class="footer">
     Created By <strong>Dasun Kalhara</strong> ✨
@@ -355,7 +294,6 @@
 
 <script>
   (function(){
-    // ------------------- MAIN APP LOGIC -------------------
     const videoLinkInput = document.getElementById('videoLink');
     const boostTypeSelect = document.getElementById('boostType');
     const sendBtn = document.getElementById('sendBoostBtn');
@@ -443,5 +381,7 @@
         handleSendBoost();
       }
     });
-
-  
+  })();
+</script>
+</body>
+            </html>
