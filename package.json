@@ -1,0 +1,11 @@
+{
+  "name": "tiktok-video-free-liker",
+  "version": "1.0.0",
+  "description": "TikTok Video Free Liker - Boost likes and views",
+  "main": "index.html",
+  "scripts": {
+    "start": "serve ."
+  },
+  "author": "Dasun Kalhara",
+  "license": "MIT"
+}
